@@ -2,10 +2,26 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>TEST</title>
+  <title>TEST Kubernetes</title>
 </head>
 <body>
-<H1>Patate</H1>
-<p> Hello world</p>
+<H1>ce fichier index.html</H1>
+<p>est servi par un container quelconque</p>
+<p> dans un pod quelconque</p>
+<p>sur un node quelconque</p>
+<p>Cliquez sur le bouton pour connaitre le hostname</p>
+
+<button onclick="myFunction()">Vas-y</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = location.hostname;
+  document.getElementById("demo").innerHTML= x;
+}
+</script>
+
+<p></p>
 </body>
 </html>

@@ -1,16 +1,22 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apache-deployment
+  name: apache
+  labels:
+      name: apache
 spec:
-  replicas: 1
+  selector:
+    matchLabels:
+      app: apache
+  replicas: 2
   template:
     metadata:
       labels:
-        app: apache2
+        app: apache
     spec:
       containers:
       - name: apache
-        image: matbilodeau/apachetest:latest
+        image: matbilodeau/test-apache-kube:v1
         ports:
-        - containerPort: 80
+        - name: http
+          containerPort: 80

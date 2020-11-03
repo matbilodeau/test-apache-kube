@@ -2,11 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: apache-ingress
+
 spec:
-  rules:
-  - http:
-      paths:
-      - path: /ap
-        backend:
-          serviceName: apache-service
-          servicePort: 80
+  backend:
+    serviceName: apache
+    servicePort: 80
